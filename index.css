@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.logo-piece {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+}
+
+.logo-piece .name {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-left: 10px;    
+}
+
+.menu {
+    display: flex;
+    justify-content: center;    
+}
+
+.menu .menu-text {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.hamburger-menu div {
+    background-color: black;
+    width: 25px;
+    height: 3px;
+    margin: 3px 0;
+}
+
+.menu:hover {
+    color: lightgray;
+    cursor: pointer;
+}
+
+.menu-items {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.menu-items li {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-items li:hover {
+    color: lightgray;
+    cursor: pointer;
+}
+
+.menu-items li:last-child {
+    border: 2px solid black;
+    border-radius: 7px;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.menu-items li:last-child:hover {
+    border-color: lightgray;
+}
