@@ -84,4 +84,33 @@ body {
 
 .menu-items li:last-child:hover {
     border-color: lightgray;
+}  
+
+/* .menu-items li:nth-child(4) {
+    display: flex;
+    align-items: center;
+} */
+
+.arrow-down {
+    width: 10px;
+    margin-left: 10px;
+}
+
+.submenu-items {
+    border: 1px solid gray;
+    border-radius: 7px;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+
+.submenu-items div {
+    padding-bottom: 10px;
+}
+
+.submenu-items div:hover {
+    color: #4abf4f;
+    cursor: pointer;
 }
