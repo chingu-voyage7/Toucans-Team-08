@@ -5,6 +5,7 @@
 body {
     font-size: 16px;
     font-family: 'Lato', sans-serif;
+    padding: 10px;
     /* margin-left: auto;
     margin-right: auto; */
 }
@@ -75,6 +76,10 @@ body {
     cursor: pointer;
 }
 
+.menu-items li:hover > .submenu-items {     /* prevent child element from parent's hover effect (offset) */
+    color: black;
+}
+
 .menu-items li:last-child {
     border: 2px solid black;
     border-radius: 7px;
@@ -85,11 +90,6 @@ body {
 .menu-items li:last-child:hover {
     border-color: lightgray;
 }  
-
-/* .menu-items li:nth-child(4) {
-    display: flex;
-    align-items: center;
-} */
 
 .arrow-down {
     width: 10px;
@@ -103,7 +103,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-top: 10px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    box-shadow: 1px 1px 1px #777; 
 }
 
 .submenu-items div {
@@ -113,4 +114,30 @@ body {
 .submenu-items div:hover {
     color: #4abf4f;
     cursor: pointer;
+}
+
+/* mobile responsive */
+@media screen and (min-width: 765px) {
+    .menu-items {
+        display: flex;
+        float: right;
+        align-items: flex-start;    /* So other list items down grow in height when submenu displays on 4th list item. */
+    }                               /* Don't want hover effect on lists with lengthy height */
+    
+
+    .menu-items li {
+        padding: 0;
+    }
+
+    .submenu-items {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;    /* So logo does not move down when submenu displays */
+    }
 }
