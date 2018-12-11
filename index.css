@@ -5,16 +5,57 @@
 body {
     font-size: 16px;
     font-family: 'Lato', sans-serif;
-    padding: 10px;
+    margin: 0;
+    padding: 15px;
+    overflow-x: hidden;     /* so no horizonal scroll bar */
     /* margin-left: auto;
     margin-right: auto; */
 }
 
+.header-container {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: white;
+
+}
+
+.fullscreen-vid-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#background-vid {
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+.header-overlay {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #2e2f3a;
+    z-index: 1;
+    opacity: .6;
+}
+
 .header-top {
+    padding: 5px;
+    z-index: 2;     /* So text displayed on top of video background  */
+    width: 100%;
+}
+
+.menu-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
 }
 
 .logo-piece {
@@ -23,20 +64,20 @@ body {
 }
 
 .logo {
-    width: 50px;
+    width: 40px;
 }
 
 .logo-piece .name {
     font-family: 'Oxygen', sans-serif;
     font-weight: bold;
-    font-size: 26px;
-    letter-spacing: 1px;
+    font-size: 24px;
+    letter-spacing: 2px;
     margin-left: 10px;    
 }
 
 .menu {
-    display: flex;
-    justify-content: center;    
+    display: flex; 
+    padding: 10px;
 }
 
 .menu .menu-text {
@@ -45,7 +86,7 @@ body {
 }
 
 .hamburger-menu div {
-    background-color: black;
+    background-color: white;
     width: 25px;
     height: 3px;
     margin: 3px 0;
@@ -60,6 +101,7 @@ body {
     list-style-type: none;
     padding-left: 0;
     text-align: center;
+    z-index: 2;
 }
 
 .menu-items li {
@@ -81,7 +123,7 @@ body {
 }
 
 .menu-items li:last-child {
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 7px;
     font-size: 14px;
     padding: 10px;
@@ -92,11 +134,14 @@ body {
 }  
 
 .arrow-down {
-    width: 10px;
+    width: 18px;
     margin-left: 10px;
+    vertical-align: middle;
 }
 
 .submenu-items {
+    background-color: white;
+    color: black;
     border: 1px solid gray;
     border-radius: 7px;
     width: 120px;
@@ -104,7 +149,7 @@ body {
     margin-right: auto;
     padding-top: 10px;
     margin-top: 15px;
-    box-shadow: 1px 1px 1px #777; 
+    font-weight: normal;
 }
 
 .submenu-items div {
@@ -118,8 +163,19 @@ body {
 
 /* mobile responsive */
 @media screen and (min-width: 765px) {
+
+    .logo {
+        width: 50px;
+    }
+    
+    .logo-piece .name {
+        font-size: 30px;
+        letter-spacing: 3px; 
+    }
+
     .menu-items {
         display: flex;
+        padding-right: 10px;
         float: right;
         align-items: flex-start;    /* So other list items down grow in height when submenu displays on 4th list item. */
     }                               /* Don't want hover effect on lists with lengthy height */
@@ -135,7 +191,8 @@ body {
 }
 
 @media screen and (min-width: 991px) {
-    header {
+
+    .header-top {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;    /* So logo does not move down when submenu displays */

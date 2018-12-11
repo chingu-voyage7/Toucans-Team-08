@@ -3,43 +3,51 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Nauto Clone Project</title>
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <header>
-            <div class="header-top">
-                <div class="logo-piece">
-                    <img class="logo" src="./images/text.png" alt="logo">
-                    <span class="name">tauto</span>
-                </div>
-                <div class="menu">
-                    <span class="menu-text">Menu</span>
-                    <span class="hamburger-menu">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </span>
-                </div>
+        <header class="header-container">
+            <div class="fullscreen-vid-wrap">
+                <video autoplay muted loop id="background-vid">
+                    <source src="./video/cars.mp4" type="video/mp4">
+                </video>
             </div>
-            <ul class="menu-items">
-                <li>Product</li>
-                <li>Partners</li>
-                <li>Resources</li>
-                <li>Company<img class="arrow-down" src="./images/navigate-arrows.png" alt="arrow down">                
-                    <div class="submenu-items">
-                        <div>About</div>
-                        <div>Careers</div>
-                        <div>News</div>
-                        <div>Events</div>
-                        <div>Blog</div>
+            <div class="header-overlay"></div>
+            <div class="header-top">
+                <div class="menu-container">
+                    <div class="logo-piece">
+                        <img class="logo" src="./images/text.png" alt="logo">
+                        <span class="name">tauto</span>
                     </div>
-                </li>
-                <li>Contact us</li>   <!-- Wrap in div so border doesn't expand when submenu expands -->
-            </ul>
+                    <div class="menu">
+                        <span class="menu-text">Menu</span>
+                        <span class="hamburger-menu">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </span>
+                    </div>
+                </div>
+                <ul class="menu-items">
+                        <li>Product</li>
+                        <li>Partners</li>
+                        <li>Resources</li>
+                        <li>Company<img class="arrow-down" src="./images/white-arrow.png" alt="arrow down">                
+                            <div class="submenu-items">
+                                <div>About</div>
+                                <div>Careers</div>
+                                <div>News</div>
+                                <div>Events</div>
+                                <div>Blog</div>
+                            </div>
+                        </li>
+                        <li>Contact us</li>   <!-- Wrap in div so border doesn't expand when submenu expands -->
+                    </ul>
+            </div>
+
         </header>
         <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -48,5 +56,6 @@
         <script src="main.js"></script>
         <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/dmitri13" title="dmitri13">dmitri13</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
         <!-- <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+        <!-- Stock videos by <a href="http://www.Videezy.com">Videezy.com</a> -->
     </body>
 </html>

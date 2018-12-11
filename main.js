@@ -1,16 +1,13 @@
-
-
 function navbarMenuDisplay() {
     $(".menu").hover(
         function() {
             $(this).find("div").css( "background-color", "lightgray" );
         }, function() {
-            $(this).find("div").css( "background-color", "black" );
+            $(this).find("div").css( "background-color", "white" );
         }
     );
 
     $(".submenu-items").hide();
-
 
     if ($(window).width() > 990) {
         $(".menu").hide();
