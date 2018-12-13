@@ -10,14 +10,23 @@ body {
     overflow-x: hidden;     /* so no horizonal scroll bar */
     /* margin-left: auto;
     margin-right: auto; */
+    background-color: lightgray;
 }
 
 .header-container {
     height: 100vh;
+    /* height: auto; */
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     color: white;
+
+    /* position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto; */
 
 }
 
@@ -33,17 +42,20 @@ body {
 #background-vid {
     min-width: 100%; 
     min-height: 100%;
+    /* min-height: auto; */
+    /* opacity: .80; */
 }
 
 .header-overlay {
     height: 100vh;
+    /* height: auto; */
     width: 100vw;
     position: absolute;
     top: 0;
     left: 0;
     background: #2e2f3a;
     z-index: 1;
-    opacity: .6;
+    opacity: .4;
 }
 
 .header-top {
@@ -77,7 +89,8 @@ body {
 
 .menu {
     display: flex; 
-    padding: 10px;
+    padding-right: 15px;
+    padding-top: 0;
 }
 
 .menu .menu-text {
@@ -101,7 +114,12 @@ body {
     list-style-type: none;
     padding-left: 0;
     text-align: center;
-    z-index: 2;
+    z-index: 3;
+    border: 1px solid white;
+    border-radius: 7px;
+    background-color: #2E2F3A;
+    color: white;
+    /* box-shadow: 1px 1px 2px white; */
 }
 
 .menu-items li {
@@ -126,7 +144,8 @@ body {
     border: 2px solid white;
     border-radius: 7px;
     font-size: 14px;
-    padding: 10px;
+    padding: 8px;
+    margin-bottom: 20px;
 }
 
 .menu-items li:last-child:hover {
@@ -154,11 +173,18 @@ body {
 
 .submenu-items div {
     padding-bottom: 10px;
+    /* text-shadow: 1px 1px 2px rgba(0,0,0,0.3); */
 }
 
 .submenu-items div:hover {
     color: #4abf4f;
     cursor: pointer;
+}
+
+h2 {
+    z-index: 2;
+    color: white;
+    /* clear: left; */
 }
 
 /* mobile responsive */
@@ -175,6 +201,10 @@ body {
 
     .menu-items {
         display: flex;
+        margin-top: 0;
+        border-style: none;
+        background-color: transparent;
+        font-size: 18px;
         padding-right: 10px;
         float: right;
         align-items: flex-start;    /* So other list items down grow in height when submenu displays on 4th list item. */
