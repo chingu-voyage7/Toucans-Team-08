@@ -6,10 +6,9 @@ body {
     font-size: 16px;
     font-family: 'Lato', sans-serif;
     margin: 0;
-    padding: 15px;
     overflow-x: hidden;     /* so no horizonal scroll bar */
-    /* margin-left: auto;
-    margin-right: auto; */
+    margin-left: auto;
+    margin-right: auto;
     background-color: lightgray;
 }
 
@@ -20,14 +19,6 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     color: white;
-
-    /* position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    height: auto; */
-
 }
 
 .fullscreen-vid-wrap {
@@ -42,8 +33,6 @@ body {
 #background-vid {
     min-width: 100%; 
     min-height: 100%;
-    /* min-height: auto; */
-    /* opacity: .80; */
 }
 
 .header-overlay {
@@ -68,6 +57,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px;
 }
 
 .logo-piece {
@@ -89,7 +79,6 @@ body {
 
 .menu {
     display: flex; 
-    padding-right: 15px;
     padding-top: 0;
 }
 
@@ -114,12 +103,14 @@ body {
     list-style-type: none;
     padding-left: 0;
     text-align: center;
-    z-index: 3;
-    border: 1px solid white;
+    padding: 5px;
+    /* width: 100%; */
+    /* float: right; */
+    border: 2px solid white;
     border-radius: 7px;
     background-color: #2E2F3A;
     color: white;
-    /* box-shadow: 1px 1px 2px white; */
+    position: relative;     /*So drop down menu displays over text below it*/
 }
 
 .menu-items li {
@@ -177,14 +168,41 @@ body {
 }
 
 .submenu-items div:hover {
-    color: #4abf4f;
+    color: #49BF4E;
     cursor: pointer;
 }
 
-h2 {
-    z-index: 2;
+.intro-sec {
     color: white;
-    /* clear: left; */
+    width: 99%;
+    padding: 10px;
+    line-height: 1.5;
+    text-align: center;
+    top: 50%;               /* To vertically center against viewport */
+    transform: translateY(-50%);
+    position: absolute;     /* So drop down menu will be displayed on top of text here (absolute is out of normal flow) */
+}
+
+.intro-sec h1 {
+    font-size: 26px;
+}
+
+.learn-button {
+    font-weight: bold;
+    width: 220px;
+    padding: 10px 15px;
+    text-align: center;
+    background-color: #49BF4E;
+    border-radius: 7px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.learn-button:hover {
+    cursor: pointer;
+    background-color: #128D17;
+    box-shadow: 0 1px 5px #128D17;
+    transition: 0.5s ease;
 }
 
 /* mobile responsive */
@@ -205,6 +223,7 @@ h2 {
         border-style: none;
         background-color: transparent;
         font-size: 18px;
+        padding-top: 15px;
         padding-right: 10px;
         float: right;
         align-items: flex-start;    /* So other list items down grow in height when submenu displays on 4th list item. */
@@ -218,6 +237,31 @@ h2 {
     .submenu-items {
         margin-top: 30px;
     }
+
+    .intro-descr { 
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .intro-sec h1 {
+        font-size: 36px;
+        max-width: 40%;
+        margin: 10px;
+        text-align: center;
+    }
+
+    .intro-sec p {
+        font-size: 20px;
+        max-width: 30%;
+        margin: 10px;
+        text-align: left;
+    }
+
+    .learn-button {
+        margin-top: 40px;
+    }
+
 }
 
 @media screen and (min-width: 991px) {
@@ -226,5 +270,13 @@ h2 {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;    /* So logo does not move down when submenu displays */
+    }
+
+    .intro-sec h1 {
+        max-width: 35%;
+    }
+
+    .intro-sec p {
+        max-width: 25%;
     }
 }
