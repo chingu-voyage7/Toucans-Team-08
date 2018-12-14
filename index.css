@@ -9,7 +9,7 @@ body {
     overflow-x: hidden;     /* so no horizonal scroll bar */
     margin-left: auto;
     margin-right: auto;
-    background-color: lightgray;
+    color: white;
 }
 
 .header-container {
@@ -42,7 +42,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background: #2e2f3a;
+    background: #393B48;
     z-index: 1;
     opacity: .4;
 }
@@ -95,7 +95,7 @@ body {
 }
 
 .menu:hover {
-    color: lightgray;
+    color: #49BF4E;
     cursor: pointer;
 }
 
@@ -104,8 +104,6 @@ body {
     padding-left: 0;
     text-align: center;
     padding: 5px;
-    /* width: 100%; */
-    /* float: right; */
     border: 2px solid white;
     border-radius: 7px;
     background-color: #2E2F3A;
@@ -123,7 +121,7 @@ body {
 }
 
 .menu-items li:hover {
-    color: lightgray;
+    color: #49BF4E;
     cursor: pointer;
 }
 
@@ -140,7 +138,7 @@ body {
 }
 
 .menu-items li:last-child:hover {
-    border-color: lightgray;
+    border-color: #49BF4E;
 }  
 
 .arrow-down {
@@ -201,9 +199,55 @@ body {
 .learn-button:hover {
     cursor: pointer;
     background-color: #128D17;
-    box-shadow: 0 1px 5px #128D17;
-    transition: 0.5s ease;
+    transition: 0.3s ease;
 }
+
+.stats-sec {
+    background-color: #393B48;
+    opacity: .99;
+    padding: 10px;
+    -webkit-box-shadow: 0 -10px 15px #393B48;
+    -moz-box-shadow: 0 -10px 15px #393B48;
+    box-shadow: 0 -10px 15px #393B48;
+}
+
+.stats-sec h2 {
+    margin: 0;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container {
+    width: 30%;
+    text-align: center;
+}
+
+.stats-icon {
+    width: 45px;
+    height: 45px;
+    margin: 15px;
+}
+
+.stats-details {
+    margin: 10px;
+    width: 70%;
+}
+
+.stats-details h3 {
+    margin-bottom: 0;
+}
+
+.stats-details p {
+    opacity: .8;
+}
+
 
 /* mobile responsive */
 @media screen and (min-width: 765px) {
@@ -260,6 +304,34 @@ body {
 
     .learn-button {
         margin-top: 40px;
+    }
+
+    .stats-sec h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .stats-all {
+        display: flex;
+        justify-content: center;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        width: 33%;
+        justify-content: flex-start;
+    }
+
+    .stats-details {
+        text-align: center;
+    }
+
+    .stats-details h3 {
+        font-size: 24px;
+    }
+    
+    .stats-details p {
+        font-size: 18px;
     }
 
 }
