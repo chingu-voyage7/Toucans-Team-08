@@ -10,6 +10,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     color: white;
+    line-height: 1.5;
 }
 
 .header-container {
@@ -74,7 +75,7 @@ body {
     font-weight: bold;
     font-size: 24px;
     letter-spacing: 2px;
-    margin-left: 10px;    
+    margin-left: 5px;    
 }
 
 .menu {
@@ -106,7 +107,7 @@ body {
     padding: 5px;
     border: 2px solid white;
     border-radius: 7px;
-    background-color: #2E2F3A;
+    background-color: #393B48;
     color: white;
     position: relative;     /*So drop down menu displays over text below it*/
 }
@@ -126,7 +127,7 @@ body {
 }
 
 .menu-items li:hover > .submenu-items {     /* prevent child element from parent's hover effect (offset) */
-    color: black;
+    color: #393B48;
 }
 
 .menu-items li:last-child {
@@ -149,7 +150,7 @@ body {
 
 .submenu-items {
     background-color: white;
-    color: black;
+    color: #393B48;
     border: 1px solid gray;
     border-radius: 7px;
     width: 120px;
@@ -174,7 +175,6 @@ body {
     color: white;
     width: 99%;
     padding: 10px;
-    line-height: 1.5;
     text-align: center;
     top: 50%;               /* To vertically center against viewport */
     transform: translateY(-50%);
@@ -194,6 +194,7 @@ body {
     border-radius: 7px;
     margin-left: auto;
     margin-right: auto;
+    color: white;
 }
 
 .learn-button:hover {
@@ -208,12 +209,12 @@ body {
     padding: 10px;
     -webkit-box-shadow: 0 -10px 15px #393B48;
     -moz-box-shadow: 0 -10px 15px #393B48;
-    box-shadow: 0 -10px 15px #393B48;
+    box-shadow: 0 -5px 10px #393B48;
 }
 
 .stats-sec h2 {
     margin: 0;
-    padding: 15px 20px;
+    padding: 20px;
     text-align: center;
     font-size: 24px;
 }
@@ -248,8 +249,45 @@ body {
     opacity: .8;
 }
 
+.about-sec {
+    color: #393B48;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.about-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+}
+
+.about-sec h2{
+    font-size: 28px;
+}
+
+.about-container > p {
+    font-size: 18px;
+}
+
+.driver-image {
+    max-height: auto;
+    max-width: 100%;
+    box-shadow: 1px 2px 4px #777;
+}
+
+.driver-img-caption {
+    font-size: 14px;
+    color: gray;
+}
 
 /* mobile responsive */
+@media screen and (min-width: 520px) {
+
+    .driver-image {
+        max-width: 481px;
+    }
+}
+
 @media screen and (min-width: 765px) {
 
     .logo {
@@ -334,6 +372,10 @@ body {
         font-size: 18px;
     }
 
+    .about-container {
+        max-width: 75%;
+    }
+
 }
 
 @media screen and (min-width: 991px) {
@@ -350,5 +392,9 @@ body {
 
     .intro-sec p {
         max-width: 25%;
+    }
+
+    .driver-image {
+        max-height: 306px;
     }
 }
