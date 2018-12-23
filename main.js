@@ -11,6 +11,8 @@ function navbarMenuDisplay() {
 
     if ($(window).width() > 990) {
         $(".menu").hide();
+        $(".menu-items").show();
+
         $(document).off("click");       //Disable click handler as menu is permanently shown.
         closeSubMenuOnClick();
     }
@@ -94,10 +96,26 @@ function navbarMenuDisplay() {
         });
 };
 
+//make elements slowly appear when they become positioned within browser viewport
+function displayOnScroll() {
+    $(window).scroll(function() {
+        $('.hideme').each( function(){
+            const object_bottom = $(this).position().top + $(this).outerHeight();
+            const window_bottom = $(window).scrollTop() + $(window).height(); 
+
+            if( window_bottom > object_bottom ){
+                $(this).animate({'opacity':'1'}, 1000);   
+            }
+        });
+    });
+}
+
+
 
 $(document).ready(function() {
 
     $( navbarMenuDisplay() );
+    $( displayOnScroll() );
 
 });
 

@@ -206,7 +206,7 @@ body {
 .stats-sec {
     background-color: #393B48;
     opacity: .99;
-    padding: 10px;
+    padding: 5px 10px 15px;;
     -webkit-box-shadow: 0 -10px 15px #393B48;
     -moz-box-shadow: 0 -10px 15px #393B48;
     box-shadow: 0 -5px 10px #393B48;
@@ -223,6 +223,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hideme {
+    opacity: 0;
 }
 
 .icon-container {
@@ -278,6 +282,91 @@ body {
 .driver-img-caption {
     font-size: 14px;
     color: gray;
+}
+
+.divider {
+    max-width: 70%;
+    height: 0;
+    border-top: 1px solid lightgray;
+    font-size: 0;
+    margin: 40px auto;
+    opacity: .7;
+}
+
+.customer-list {
+    color: #393B48;
+    text-align: center;
+    padding: 15px;
+}
+
+.customer-list h2 {
+    font-size: 28px;
+}
+
+.customer-list p {
+    font-size: 18px;
+}
+
+.company-list {
+    color: lightgray;
+    font-size: 32px;
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.company-list li {
+    margin: 20px;
+}
+
+.company-1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.company-2 {
+    font-family: 'Teko', sans-serif;
+}
+
+.company-3 {
+    font-family: 'Passion One', cursive;
+}
+
+.company-4 {
+    font-family: 'Rancho', cursive;
+}
+
+.company-5 {
+    font-family: 'Teko', sans-serif;
+}
+
+.company-slideshow {
+    color: #393B48;
+    text-align: center;
+    padding: 15px;
+}
+
+.slideshow-container {
+    color: lightgray;
+    font-size: 32px;
+    list-style-type: none;
+    padding-left: 0;
+    /* text-align: center; */
+}
+
+.slideshow-container li {
+    min-height: 480px;
+    border: 1px solid lightgray;
+    padding: 25px;
+}
+
+.slideshow-container p {
+    color: #393B48;
+    font-size: 18px;
+    font-style: italic;
+    opacity: .8;
 }
 
 /* mobile responsive */
@@ -346,7 +435,7 @@ body {
 
     .stats-sec h2 {
         font-size: 28px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     .stats-all {
@@ -376,14 +465,16 @@ body {
         max-width: 75%;
     }
 
+    .company-list {
+        font-size: 38px;
+    }
+
 }
 
 @media screen and (min-width: 991px) {
 
-    .header-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;    /* So logo does not move down when submenu displays */
+    .menu-container {
+        width: 100%;
     }
 
     .intro-sec h1 {
@@ -396,5 +487,13 @@ body {
 
     .driver-image {
         max-height: 306px;
+    }
+}
+
+@media screen and (min-width: 1008px) {
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;    /* So logo does not move down when submenu displays */
     }
 }
