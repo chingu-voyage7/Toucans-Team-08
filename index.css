@@ -76,6 +76,7 @@ body {
     font-size: 24px;
     letter-spacing: 2px;
     margin-left: 5px;    
+    padding-top: 0;
 }
 
 .menu {
@@ -86,6 +87,8 @@ body {
 .menu .menu-text {
     margin-right: 10px;
     font-weight: bold;
+    position: relative;
+    top: -2px;          /* So menu text vertically aligns with hamburger menu */
 }
 
 .hamburger-menu div {
@@ -312,6 +315,7 @@ body {
     font-size: 32px;
     list-style-type: none;
     padding-left: 0;
+    margin-bottom: 0;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -342,38 +346,142 @@ body {
     font-family: 'Teko', sans-serif;
 }
 
+.company-6 {
+    font-family: 'Voltaire', sans-serif;
+}
+
 .company-slideshow {
     color: #393B48;
     text-align: center;
-    padding: 15px;
+}
+
+.company-slideshow h2 {
+    font-size: 28px;
+    margin: 15px;
 }
 
 .slideshow-container {
-    color: lightgray;
-    font-size: 32px;
+    display:flex;
+    align-items: center;
     list-style-type: none;
     padding-left: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
     /* text-align: center; */
 }
 
+.slideshow-container li > div:first-child {
+    font-size: 34px;
+}
+
 .slideshow-container li {
-    min-height: 480px;
+    min-height: 410px;
     border: 1px solid lightgray;
+    border-radius: 7px;
+    background-color: #ECF0F0;
     padding: 25px;
+    margin: 15px;
+}
+
+.slideshow-container .company-1 {
+    color: #4682B4;
+}
+
+.slideshow-container .company-2 {
+    color: #3CB371;
+}
+
+.slideshow-container .company-3 {
+    color: #B22222;
+}
+
+.slideshow-container .company-4 {
+    color: #1E578C;
+}
+
+.slideshow-container .company-5 {
+    color: #BA7131;
+}
+
+.slideshow-container .company-6 {
+    color: #55803D;
 }
 
 .slideshow-container p {
-    color: #393B48;
     font-size: 18px;
     font-style: italic;
-    opacity: .8;
+    opacity: 0.75;
 }
 
-/* mobile responsive */
-@media screen and (min-width: 520px) {
+.name {
+    font-weight: bold;
+    padding-top: 15px;
+}
 
+.arrow {
+    display: none;
+    width: 35px;
+    height: 35px;
+    background-color: #ECF0F0;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+.left-arrow {   /* Left arrow stays at the top order so its position doesn't change */
+    order: -3;
+    margin-left: 15px;
+}
+
+.right-arrow {  /* Stays at third order in list so arrow does not move in list */
+    order: 1;
+    margin-right: 15px;
+}
+
+.circle-btn {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    background-color: #F0F1F4;
+    border: 1px solid #CCD0D9;
+    border-radius: 50%;
+}
+
+.circle-btn:hover {
+    cursor: pointer;
+}
+
+.selected-display {
+    order: -2;
+}
+
+.selected-btn {
+    background-color: black;
+    border-color: black;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+/* mobile responsive */
+
+@media screen and (min-width: 425px) {
+    
+    .slideshow-container li {
+        min-height: 350px;
+    }
+}
+
+@media screen and (min-width: 520px) {
     .driver-image {
         max-width: 481px;
+    }
+
+    .slideshow-container li {
+        min-height: 330px;
     }
 }
 
@@ -469,6 +577,14 @@ body {
         font-size: 38px;
     }
 
+    .arrow {
+        display: inline-block;
+    }
+
+    .slideshow-container li {
+        min-height: 310px;
+    }
+
 }
 
 @media screen and (min-width: 991px) {
@@ -488,6 +604,28 @@ body {
     .driver-image {
         max-height: 306px;
     }
+
+    .company-slideshow {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .slideshow-container {
+        overflow: hidden;
+    }
+
+    .slideshow-container li {
+        min-height: 440px;
+        min-width: 41%;
+    }
+    
+    .right-arrow {  
+        order: -1;
+    }
+
+    .comp1-container, .comp2-container {
+        order: -2;
+    }
 }
 
 @media screen and (min-width: 1008px) {
@@ -495,5 +633,50 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;    /* So logo does not move down when submenu displays */
+    }
+}
+
+@media screen and (min-width: 1135px) {
+    .slideshow-container li {
+        min-height: 380px;
+        min-width: 42%;
+    }
+}
+
+@media screen and (min-width: 1255px) {
+    .slideshow-container li {
+        min-width: 43%;
+    }
+}
+
+@media screen and (min-width: 1410px) {
+    .slideshow-container li {
+        min-height: 340px;
+        min-width: 44%;
+    }
+}
+
+@media screen and (min-width: 1620px) {
+    .slideshow-container li {
+        min-height: 310px;
+        min-width: 45%;
+    }
+}
+
+@media screen and (min-width: 1910px) {
+    .slideshow-container li {
+        min-width: 45.5%;
+    }
+}
+
+@media screen and (min-width: 2105px) {
+    .slideshow-container li {
+        min-width: 46%;
+    }
+}
+
+@media screen and (min-width: 2350px) {
+    .slideshow-container li {
+        min-width: 46.5%;
     }
 }
