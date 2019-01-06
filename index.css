@@ -122,6 +122,7 @@ body {
     width: 120px;
     margin-left: auto;
     margin-right: auto;
+    transition: 0.3s;       /* smoother hover effect */
 }
 
 .menu-items li:hover {
@@ -166,7 +167,7 @@ body {
 
 .submenu-items div {
     padding-bottom: 10px;
-    /* text-shadow: 1px 1px 2px rgba(0,0,0,0.3); */
+    transition: 0.3s;
 }
 
 .submenu-items div:hover {
@@ -198,6 +199,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     color: white;
+    transition: 0.3s;
 }
 
 .learn-button:hover {
@@ -465,6 +467,78 @@ body {
     border-color: black;
 }
 
+
+.footer-links {
+    background-color: #393B48;
+    opacity: .99;
+    -webkit-box-shadow: 0 -10px 15px #393B48;
+    -moz-box-shadow: 0 -10px 15px #393B48;
+    box-shadow: 0 -5px 10px #393B48;
+}
+
+.link-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px 15px;
+    font-weight: bold;
+}
+
+.link-list li {
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.link-list li:hover {
+    cursor: pointer;
+    color: #49BF4E;
+}
+
+.meta-list {
+    font-size: 14px;
+    color: lightgray;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.meta-list li {
+    transition: 0.3s;
+}
+
+.meta-list li:hover {
+    cursor: pointer;
+    color: #49BF4E;
+}
+
+.social-list {
+    padding-top: 0;
+}
+
+.social-list li {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    /* margin: 15px; */
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    border-radius: 20%;
+    padding: 6px;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    background-color: white;
+    border-color: white;
+}
+
 /* ----------------------------------------------------------------------------------------- */
 /* mobile responsive */
 
@@ -616,7 +690,7 @@ body {
 
     .slideshow-container li {
         min-height: 440px;
-        min-width: 41%;
+        min-width: 40.5%;
     }
     
     .right-arrow {  
@@ -633,6 +707,10 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;    /* So logo does not move down when submenu displays */
+    }
+
+    .slideshow-container li {
+        min-width: 41%;
     }
 }
 

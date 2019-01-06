@@ -104,7 +104,7 @@ function displayOnScroll() {
             const window_bottom = $(window).scrollTop() + $(window).height(); 
 
             if( window_bottom > object_bottom ){
-                $(this).animate({'opacity':'1'}, 1000);   
+                $(this).animate({'opacity':'1'}, 800);   
             }
         });
     });
@@ -199,28 +199,27 @@ function clickForSlideshow() {
         }   
 
         function leftArrowLargerWindow() {
+            const slideshow = [[1,2], [3,4], [5,6]]; 
+
             //if at 1st & 2nd list, go to 5th & 6th list (by changing flex order since the rest of list is just hidden by overflow)
-            if ( $(".comp1-container, .comp2-container").css("order") == "-2" ) {
-                $(".comp5-container, .comp6-container").css("order", "-2");
-                $(".slideshow-container > li").not(".comp5-container, .comp6-container").css("order", "0");
-
-                //button colored in relations to displayed list
-                $(".circle-btn:nth-child(3)").addClass("selected-btn");
-                $(".circle-btn").not(".circle-btn:nth-child(3)").removeClass("selected-btn");
-            }   //can't check for nth-type since order changed in order to display each list
-            else if ( $(".comp5-container, .comp6-container").css("order") == "-2" )  {
-                $(".comp3-container, .comp4-container").css("order", "-2");
-                $(".slideshow-container > li").not(".comp3-container, .comp4-container").css("order", "0");
-
-                $(".circle-btn:nth-child(2)").addClass("selected-btn");
-                $(".circle-btn").not(".circle-btn:nth-child(2)").removeClass("selected-btn");
-            }
-            else if ( $(".comp3-container, .comp4-container").css("order") == "-2" )  {
-                $(".comp1-container, .comp2-container").css("order", "-2");
-                $(".slideshow-container > li").not(".comp1-container, .comp2-container").css("order", "0");
-
-                $(".circle-btn:nth-child(1)").addClass("selected-btn");
-                $(".circle-btn").not(".circle-btn:nth-child(1)").removeClass("selected-btn");
+            for (let i = 2; i >= 1; i--) {
+                if ( $(".comp1-container, .comp2-container").css("order") == "-2" ) {
+                    $(".comp5-container, .comp6-container").css("order", "-2");
+                    $(".slideshow-container > li").not(".comp5-container, .comp6-container").css("order", "0");
+    
+                    //button colored in relations to displayed list
+                    $(".circle-btn:nth-child(3)").addClass("selected-btn");
+                    $(".circle-btn").not(".circle-btn:nth-child(3)").removeClass("selected-btn");
+                    break;
+                }   //can't check for nth-type since order changed in order to display each list
+                else if ( $(`.comp${slideshow[i][0]}-container, .comp${slideshow[i][1]}-container`).css("order") == "-2" )  {
+                    $(`.comp${slideshow[i - 1][0]}-container, .comp${slideshow[i - 1][1]}-container`).css("order", "-2");
+                    $(".slideshow-container > li").not(`.comp${slideshow[i - 1][0]}-container, .comp${slideshow[i - 1][1]}-container`).css("order", "0");
+    
+                    $(`.circle-btn:nth-child(${i})`).addClass("selected-btn");
+                    $(".circle-btn").not(`.circle-btn:nth-child(${i})`).removeClass("selected-btn");
+                    break;
+                }
             }
         }   
         
@@ -255,26 +254,23 @@ function clickForSlideshow() {
         }
 
         function rightArrowLargerWindow() {
-            if ( $(".comp5-container, .comp6-container").css("order") == "-2" ) {
-                $(".comp1-container, .comp2-container").css("order", "-2");
-                $(".slideshow-container > li").not(".comp1-container, .comp2-container").css("order", "0");
-
-                $(".circle-btn:nth-child(1)").addClass("selected-btn");
-                $(".circle-btn").not(".circle-btn:nth-child(1)").removeClass("selected-btn");
-            }  
-            else if ( $(".comp1-container, .comp2-container").css("order") == "-2" )  {
-                $(".comp3-container, .comp4-container").css("order", "-2");
-                $(".slideshow-container > li").not(".comp3-container, .comp4-container").css("order", "0");
-
-                $(".circle-btn:nth-child(2)").addClass("selected-btn");
-                $(".circle-btn").not(".circle-btn:nth-child(2)").removeClass("selected-btn");
-            }
-            else if ( $(".comp3-container, .comp4-container").css("order") == "-2" )  {
-                $(".comp5-container, .comp6-container").css("order", "-2");
-                $(".slideshow-container > li").not(".comp5-container, .comp6-container").css("order", "0");
-
-                $(".circle-btn:nth-child(3)").addClass("selected-btn");
-                $(".circle-btn").not(".circle-btn:nth-child(3)").removeClass("selected-btn");
+            const slideshow = [[1,2], [3,4], [5,6]]; 
+            for (let i = 0; i <= 1; i++) {
+                if ( $(".comp5-container, .comp6-container").css("order") == "-2" ) {
+                    $(".comp1-container, .comp2-container").css("order", "-2");
+                    $(".slideshow-container > li").not(".comp1-container, .comp2-container").css("order", "0");
+    
+                    $(".circle-btn:nth-child(1)").addClass("selected-btn");
+                    $(".circle-btn").not(".circle-btn:nth-child(1)").removeClass("selected-btn");
+                }  
+                else if ( $(`.comp${slideshow[i][0]}-container, .comp${slideshow[i][1]}-container`).css("order") == "-2" )  {
+                    $(`.comp${slideshow[i + 1][0]}-container, .comp${slideshow[i + 1][1]}-container`).css("order", "-2");
+                    $(".slideshow-container > li").not(`.comp${slideshow[i + 1][0]}-container, .comp${slideshow[i + 1][1]}-container`).css("order", "0");
+    
+                    $(`.circle-btn:nth-child(${i + 2})`).addClass("selected-btn");
+                    $(".circle-btn").not(`.circle-btn:nth-child(${i + 2})`).removeClass("selected-btn");
+                    break;
+                }
             }
         }   
 
