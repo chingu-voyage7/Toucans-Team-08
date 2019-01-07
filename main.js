@@ -12,15 +12,15 @@ function navbarMenuDisplay() {
     //helper functions
     function adjMenuAtLargerWindow() {
         $(".menu").hide();
-        $(".menu-items").fadeIn("slow");
-        $(document).off("click");       //Disable click handler as menu is permanently shown.
+        $(".menu-items").show("slow");
+        $(document).off("click");      
         closeSubMenuOnClick();
     }
 
     function adjMenuAtSmallerWindow() {
         $(".menu").fadeIn("slow");
-        $(".menu-items").hide();        //Hide menu on page load. 
-        $(document).on("click");        //Works only with these 2 lines when resizing window or else code breaks with menu display.
+        $(".menu-items").hide();        
+        $(document).on("click");        
         closeMenuOnClick();    
     }
 
@@ -31,7 +31,6 @@ function navbarMenuDisplay() {
         adjMenuAtSmallerWindow();     
     }
 
-    //Same as above but when browser is resized.
     $(window).resize(function() {
         $(".submenu-items").hide();
         $(".menu-items li:nth-child(4) .arrow-down").css("transform", "rotate(360deg)");    
@@ -45,8 +44,8 @@ function navbarMenuDisplay() {
     });
 
     //menu button to display menu
-    $(".menu").click(function() {
-        event.stopPropagation();    //so clicking menu button does not trigger event listener on document to hide menu
+    $(".menu").click(function(event) {  
+        event.stopPropagation();    
         if( $(".menu-items").is(":hidden") ) {
             $(".menu-items").slideDown("500");
         }
@@ -83,8 +82,8 @@ function navbarMenuDisplay() {
     }
 
     //click on 4th list item to display submenu
-        $(".menu-items li:nth-child(4)").click(function() {
-            event.stopPropagation();    //So closeSubMenuOnClick() does not listen to this event and concurrently closes it.
+        $(".menu-items li:nth-child(4)").click(function(event) {
+            event.stopPropagation();   
             if( $(".submenu-items").is(":visible") ) {
                 $(".submenu-items").slideUp("500");
                 $(".menu-items li:nth-child(4) .arrow-down").css("transform", "rotate(360deg)");
@@ -162,10 +161,10 @@ function clickForSlideshow() {
         }
         
         else if ($(window).width() > 990) {
-            const slideshow = [[1,2], [3,4], [5,6]];    //display 2 lists at a time
+            const slideshow = [[1,2], [3,4], [5,6]];  
             for (let i = 0; i <= 2; i++) {
                 if ($(event.target).is(`.circle-btn:nth-child(${i + 1})`) ) {
-                    $(`.comp${slideshow[i][0]}-container, .comp${slideshow[i][1]}-container`).css("order", "-2");   //already displayed so need to change flex order
+                    $(`.comp${slideshow[i][0]}-container, .comp${slideshow[i][1]}-container`).css("order", "-2");  
                     $(".slideshow-container > li").not(`.comp${slideshow[i][0]}-container, .comp${slideshow[i][1]}-container`).css("order", "0");
                 }
             }

@@ -6,7 +6,7 @@ body {
     font-size: 16px;
     font-family: 'Lato', sans-serif;
     margin: 0;
-    overflow-x: hidden;     /* so no horizonal scroll bar */
+    overflow-x: hidden;     
     margin-left: auto;
     margin-right: auto;
     color: white;
@@ -15,7 +15,6 @@ body {
 
 .header-container {
     height: 100vh;
-    /* height: auto; */
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -38,7 +37,6 @@ body {
 
 .header-overlay {
     height: 100vh;
-    /* height: auto; */
     width: 100vw;
     position: absolute;
     top: 0;
@@ -50,7 +48,7 @@ body {
 
 .header-top {
     padding: 5px;
-    z-index: 2;     /* So text displayed on top of video background  */
+    z-index: 2;     
     width: 100%;
 }
 
@@ -88,7 +86,7 @@ body {
     margin-right: 10px;
     font-weight: bold;
     position: relative;
-    top: -2px;          /* So menu text vertically aligns with hamburger menu */
+    top: -2px;          
 }
 
 .hamburger-menu div {
@@ -106,13 +104,15 @@ body {
 .menu-items {
     list-style-type: none;
     padding-left: 0;
+    margin-top: 0;
     text-align: center;
     padding: 5px;
     border: 2px solid white;
     border-radius: 7px;
     background-color: #393B48;
     color: white;
-    position: relative;     /*So drop down menu displays over text below it*/
+    position: relative;     
+    z-index: 1;
 }
 
 .menu-items li {
@@ -122,7 +122,7 @@ body {
     width: 120px;
     margin-left: auto;
     margin-right: auto;
-    transition: 0.3s;       /* smoother hover effect */
+    transition: 0.3s;       
 }
 
 .menu-items li:hover {
@@ -130,7 +130,7 @@ body {
     cursor: pointer;
 }
 
-.menu-items li:hover > .submenu-items {     /* prevent child element from parent's hover effect (offset) */
+.menu-items li:hover > .submenu-items {     
     color: #393B48;
 }
 
@@ -180,9 +180,10 @@ body {
     width: 99%;
     padding: 10px;
     text-align: center;
-    top: 50%;               /* To vertically center against viewport */
+    top: 50%;               
     transform: translateY(-50%);
-    position: absolute;     /* So drop down menu will be displayed on top of text here (absolute is out of normal flow) */
+    position: absolute;     
+    z-index: 1;
 }
 
 .intro-sec h1 {
@@ -370,7 +371,6 @@ body {
     padding-left: 0;
     padding-bottom: 0;
     margin-bottom: 0;
-    /* text-align: center; */
 }
 
 .slideshow-container li > div:first-child {
@@ -438,12 +438,12 @@ body {
     border-width: 1px;
 }
 
-.left-arrow {   /* Left arrow stays at the top order so its position doesn't change */
+.left-arrow {   
     order: -3;
     margin-left: 15px;
 }
 
-.right-arrow {  /* Stays at third order in list so arrow does not move in list */
+.right-arrow {  
     order: 1;
     margin-right: 15px;
 }
@@ -479,7 +479,11 @@ footer {
 .footer-background {
     text-align: center;
     background: url("images/hardware.jpg") no-repeat;
-    position: relative;     /* in order for gray overlay to work that is absolute positioned  */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;     
 }
 
 .footer-overlay {
@@ -492,7 +496,7 @@ footer {
 }
 
 .conclusion {
-    position: relative;     /* in order to add on z-index for words to display over the gray overlay */
+    position: relative;   
     z-index: 2;
     padding: 40px 15px;
     margin-left: auto;
@@ -521,7 +525,7 @@ footer {
 
 .media-list {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 15px;
 }
@@ -601,7 +605,6 @@ footer {
 .social-icon {
     width: 40px;
     height: 40px;
-    /* margin: 15px; */
     background-color: lightgray;
     border: 1px solid lightgray;
     border-radius: 20%;
@@ -612,6 +615,22 @@ footer {
 .social-icon:hover {
     background-color: white;
     border-color: white;
+}
+
+.authors {
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+    padding: 20px;
+}
+
+.authors a {
+    color: white;
+    transition: 0.2s;
+}
+
+.authors a:hover {
+    color: lightgray;
 }
 
 /* ----------------------------------------------------------------------------------------- */
@@ -667,15 +686,14 @@ footer {
 
     .menu-items {
         display: flex;
-        margin-top: 0;
         border-style: none;
         background-color: transparent;
         font-size: 18px;
         padding-top: 15px;
         padding-right: 10px;
         float: right;
-        align-items: flex-start;    /* So other list items down grow in height when submenu displays on 4th list item. */
-    }                               /* Don't want hover effect on lists with lengthy height */
+        align-items: flex-start; 
+    }                      
     
 
     .menu-items li {
@@ -814,7 +832,7 @@ footer {
     .header-top {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;    /* So logo does not move down when submenu displays */
+        align-items: flex-start;    
     }
 
     .slideshow-container li {
