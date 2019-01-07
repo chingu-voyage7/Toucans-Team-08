@@ -198,6 +198,7 @@ body {
     border-radius: 7px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
     color: white;
     transition: 0.3s;
 }
@@ -428,10 +429,13 @@ body {
     border: 1px solid lightgray;
     border-radius: 50%;
     padding: 8px;
+    transition: 0.1s;
 }
 
 .arrow:hover {
     cursor: pointer;
+    border-color: darkgray;
+    border-width: 1px;
 }
 
 .left-arrow {   /* Left arrow stays at the top order so its position doesn't change */
@@ -456,6 +460,7 @@ body {
 
 .circle-btn:hover {
     cursor: pointer;
+    border-color: darkgray;
 }
 
 .selected-display {
@@ -467,6 +472,76 @@ body {
     border-color: black;
 }
 
+footer {
+    margin-top: 60px;
+}
+
+.footer-background {
+    text-align: center;
+    background: url("images/hardware.jpg") no-repeat;
+    position: relative;     /* in order for gray overlay to work that is absolute positioned  */
+}
+
+.footer-overlay {
+    background: #393B48;
+    z-index: 1;
+    opacity: .6;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.conclusion {
+    position: relative;     /* in order to add on z-index for words to display over the gray overlay */
+    z-index: 2;
+    padding: 40px 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.conclusion h2 {
+    font-size: 28px;
+}
+
+.conclusion p {
+    font-size: 20px;
+}
+
+.media {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 20px;   
+}
+
+.media h2 {
+    font-size: 28px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.media-list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+.media-list div {
+    width: 280px;
+    transition: 0.1s;
+}
+
+.media-list div:hover {
+    cursor: pointer;
+    color: lightgray;
+}
+
+.media-list h3 {
+    font-size: 32px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+}
 
 .footer-links {
     background-color: #393B48;
@@ -479,7 +554,7 @@ body {
 .link-list {
     list-style-type: none;
     padding-left: 0;
-    margin-bottom: 0;
+    margin: 0;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -547,6 +622,10 @@ body {
     .slideshow-container li {
         min-height: 350px;
     }
+
+    .media-list div {
+        width: 320px;
+    }
 }
 
 @media screen and (min-width: 520px) {
@@ -556,6 +635,22 @@ body {
 
     .slideshow-container li {
         min-height: 330px;
+    }
+
+    .media-list div {
+        width: 380px;
+    }
+}
+
+@media screen and (min-width: 580px) {
+
+    .media-list div {
+        width: 260px;
+        padding: 20px;
+    }
+
+    .media-list h3 {
+        font-size: 38px;
     }
 }
 
@@ -659,6 +754,19 @@ body {
         min-height: 310px;
     }
 
+    .conclusion {
+        max-width: 75%;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .media {
+        padding-bottom: 60px;
+    }
+
+    .footer-links {
+        padding-top: 30px;
+    }
 }
 
 @media screen and (min-width: 991px) {
